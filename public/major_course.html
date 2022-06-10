@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="javascripts/major_course.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="stylesheets/manage_user_info.css">
+    <title> Major_Course </title>
+    <style>
+        #main {
+            padding: 120px;
+            box-sizing: border-box;
+        }
+        
+        .courses {
+            display: none;
+        }
+    </style>
+</head>
+
+<body onload="get_major_overview()">
+    <div id="main">
+        <div class="pure-4-10">
+            <table class="pure-table pure-table-horizontal">
+                <thead>
+                    <tr>
+                        <th> Major Name </th>
+                        <th> Duration </th>
+                        <th> Start Date </th>
+                        <th> Location </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr v-for="k in major_detail">
+                        <td> {{ k.major_name }} </td>
+                        <td> {{ k.major_duration }} </td>
+                        <td> {{ k.major_start_date }} </td>
+                        <td> {{ k.major_location }} </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <br>
+        <br>
+        <br>
+
+        <div>
+            <p>Please Enter Your username: </p>
+            <input type="text" id="username">
+        </div>
+        <br>
+
+        <div>
+            <form>
+                <label for="majors"> Please Choose Your Major: </label>
+                <br>
+                <br>
+                <select if="majors" name="majors" size="3" id="selection">
+              <option v-for="i in major_view":value="i.major_id"> {{ i.major_name }}</option>
+              </select>
+                <br>
+                <br>
+            </form>
+            <button onclick="update_info()">Submit Major</button>
+        </div>
+
+        <br>
+        <br>
+        <div class="courses" id="ask">
+            <p>Please Enter Your username Again: </p>
+            <input type="text" id="user_name">
+        </div>
+        <br>
+        <br>
+
+        <div class="courses" id="course">
+            <form>
+                <label for="course"> Please Choose the enrolment courses for:</label>
+                <br>
+                <br>
+                <select if="courses" name="courses" size="3" id="course_select">
+                <option v-for="m in course_detail":value="m.course_id"> {{ m.course_id }} {{ m.course_name }} </option>
+                </select>
+                <br>
+                <br>
+            </form>
+            <button onclick="update_course()"> Submit Course </button>
+        </div>
+
+    </div>
+</body>
+
+</html>

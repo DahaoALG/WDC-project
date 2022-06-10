@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+    <head>
+        <meta charset="UTF-8">
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+        <!-- <script src="javascripts/manage_user.js" defer></script> -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="stylesheets/manage_major_course.css">
+        <script src="javascripts/manage_major_course.js" defer></script>
+        <title> Manage major course </title>
+    </head>
+
+    <body onload="manage_all()">
+      <div id="main">
+        <h2>Major</h2>
+        <table class="pure-table pure-table-horizontal">
+          <thead>
+            <tr>
+              <th> Major Name </th>
+              <th> Duration </th>
+              <th> Start Date </th>
+              <th> Location </th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr v-for="k in major_info">
+              <td> {{ k.major_name }} </td>
+              <td> {{ k.major_duration }} </td>
+              <td> {{ k.major_start_date }} </td>
+              <td> {{ k.major_location }} </td>
+            </tr>
+          </tbody>
+        </table>
+        </table>
+        <br>
+        <br>
+        <button onclick="add_major()"> ADD </button>
+      </div>
+    </div>
+
+    <div id="add_major" style="display:none;">
+      <label class="for_label"> Please Enter the Major ID </label>
+      <input type="text" id="new_major_id" class="add_majors">
+
+      <br>
+      <br>
+      <label class="for_label"> Please Enter the Major Name </label>
+      <input type="text" id="new_major_name" class="add_majors">
+
+      <br>
+      <br>
+      <label class="for_label"> Please Enter the Major Duration</label>
+      <input type="text" id="new_major_duration" class="add_majors">
+
+      <br>
+      <br>
+      <label class="for_label"> Please Enter the Major Start Date </label>
+      <input type="text" id="new_major_sd" class="add_majors">
+
+      <br>
+      <br>
+      <label class="for_label"> Please Enter the Major Location </label>
+      <input type="text" id="new_major_location" class="add_majors">
+
+      <br>
+      <br>
+      <br>
+      <button onclick="back()">BACK</button>
+      <button onclick="create_major()" class="submit_button">Submit</button>
+    </div>
+
+    <div id="main_two">
+      <h2>Course</h2>
+      <div v-for="k in course_info">
+        <input type="radio" v-model="course_picked" name="course_picked" v-bind:value="k.course_id"> {{ k.course_id }} {{ k.course_name }}
+      </div>
+      <br>
+      <br>
+
+      <button onclick="delete_course()"> DELETE </button>
+      <button onclick="add_course()"> ADD </button>
+    </div>
+  </div>
+
+   <div id="add_course" style="display:none;">
+    <label class="for_label"> Please Enter the Course ID </label>
+    <input type="text" id="new_course_id" class="add_courses">
+
+    <br>
+    <br>
+    <label class="for_label"> Please Enter the Course Name </label>
+    <input type="text" id="new_course_name" class="add_courses">
+
+    <br>
+    <br>
+    <br>
+    <button onclick="back()">BACK</button>
+    <button onclick="create_course()" class="submit_button">Submit</button>
+    </div>
+
+  </body>
+
+</html>

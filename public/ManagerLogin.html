@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="stylesheets/manager.css">
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+        <script src="javascripts/managerlogin.js" defer></script>
+        <title>Aoligei-ManagerLogin</title>
+    </head>
+    <body class="body1" >
+        <div class="login-box" id="app">
+            <p class="p1">Not a manager? Click below</p>
+            <button class="login-buttom-a" onclick="window.location.href=('login.html')">Back to User Login</button><br />
+            <h4 class="login-head">Manager Login</h4>
+            <p class="login-p">Username</p>
+            <input type="text" name="username" placeholder="Enter Username" v-model="username">
+            <p v-if="username === ''" class="reminder">Username can not be empty</p>
+            <p class="login-p">Password</p>
+            <input type="password" name="password" placeholder="Enter Password" v-model="password"><br />
+            <p v-if="password === ''" class="reminder">Password can not be empty</p>
+            <button class="login-buttom-a" v-on:click="managerlogin()" >Login</button><br />
+            <button class="login-buttom-b" onclick="window.location.href=('ManagerSignUp.html')">Sign Up</button><br />
+            <br />
+        </div>
+    </body>
+</html>

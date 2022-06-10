@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang = "en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="stylesheets/courseoverview.css">
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+        <script src="javascripts/courseoverview.js" defer></script>
+        <title> CourseOverview </title>
+    </head>
+
+    <body>
+        <div id="course">
+
+            <h1> More Detail Information About Course...</h1>
+            <p class="ask"> Would you like to explore our website? </p>
+            <div class="pure-button-group button_change" role="group">
+                <button class="pure-button" onclick="window.open('login.html')"> YES </button>
+                <!-- <button class="pure-button">No</button> -->
+            </div>
+
+            <div class="course_card">
+                <div class="course_image">
+                    <div class="heading"><h2> Bachelor of Computer Science </h2></div>
+                    <div>
+                        <ul class="subitem">
+                            <li v-for="item in CS"> {{ item.title }} </li>
+                        </ul>
+                    </div>
+                    <img src="images/CS.jpg" alt="">
+                </div>
+
+                <div class="course_image"> 
+                    <div class="heading"><h2> Bachelor of Engineering (Honours)(Civil) </h2></div>
+                    <div>
+                        <ul class="subitem">
+                            <li v-for="item in CIVIL"> {{ item.title }} </li>
+                        </ul>
+                    </div>
+                    <img src="images/Civil.jpg" alt="">
+                </div>
+
+                <div class="course_image"> 
+                    <div class="heading"><h2> Bachelor of Mathematical Sciences </h2></div>
+                    <div>
+                        <ul class="subitem">
+                            <li v-for="item in MATHS"> {{ item.title }} </li>
+                        </ul>
+                    </div>
+                    <img src="images/Maths.jpg" alt="">
+                </div>
+
+                <div class="course_image">
+                    <div class="heading"><h2> Bachelor of Architectural Design </h2></div>
+                    <div>
+                        <ul class="subitem">
+                            <li v-for="item in AD"> {{ item.title }} </li>
+                        </ul>
+                    </div>
+                     <img src="images/AD.jpg" alt="">
+                    </div>
+
+                <div class="course_image">
+                    <div class="heading"><h2> Bachelor of Applied Data Analytics </h2></div>
+                    <div>
+                        <ul class="subitem">
+                            <li v-for="item in ADA"> {{ item.title }} </li>
+                        </ul>
+                    </div>
+                    <img src="images/ADA.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        
+    </body>
+
+</html>

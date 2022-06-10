@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="stylesheets/style.css">
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script src="javascripts/signup.js" defer></script>
+        <title>Aoligei-SignUp</title>
+    </head>
+    <body class="body1">
+      <main  id="app">
+        <div  class="login-box" ref="signup">
+            <a href="login.html"><button class="login-buttom-a">Back to Login</button></a><br />
+            <h4 class="login-head">Sign Up!</h4>
+            <p class="login-p">Username</p>
+            <input class="login-box-input" type="text" name="username" placeholder="Enter Username" v-model="username">
+            <p v-if="username === ''"  class="reminder">Username can not be empty</p>
+            <p class="login-p">Password</p>
+            <input class="login-box-input" type="password" name="password" placeholder="Enter Password" v-model="password"><br />
+            <p v-if="password === ''" class="reminder">Password can not be empty</p>
+            <p class="login-p">Confirm Password</p>
+            <input class="login-box-input" type="password" name="password" placeholder="Confirm Password" v-model="conpassword"><br />
+            <p v-if="conpassword === ''"  class="reminder">Confirm Password can not be empty</p>
+            <p class="login-p">Your Email</p>
+            <input class="login-box-input" type="text" name="email" placeholder="Enter Email" v-model="email">
+            <p v-if="email === ''"  class="reminder">Email can not be empty</p>
+            <div>
+              <p class="login-p login-button-s">Verification code</p>
+              <button class="login-button-s"  v-on:click="getcode()">get code</button><br />
+              <p v-if="code_send === true" class="response_code">Code send!</p>
+              <input class="login-box-input" type="text" name="email" placeholder="Enter Verification code" v-model="code">
+              <p v-if="code === ''"  class="reminder">Code can not be empty</p>
+            </div>
+            <div class="box">
+              <input type="checkbox" class="check" v-model="set"/>
+              <p class="checkp">I accept to get events details including comments send to my email (can change in setting).</p>
+            </div>
+            <button class="login-buttom-b" v-on:click="Check()">Sign Up</button><br />
+        </div>
+        <div class="login-box" ref="result" style="display: none;">
+            <h4 class="login-head">Congratulation!</h4>
+            <p>You have set up an account, try to find your friend now.</p>
+            <a href="login.html"><button class="login-buttom-a">Login</button></a><br />
+        </div>
+      </main>
+    </body>
+</html>
