@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="stylesheets/manager.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <script src="https://kit.fontawesome.com/3a85694e3a.js" crossorigin="anonymous"></script>
+    <script src="javascripts/managerhomepage.js" defer></script>
+    <title>Aoligei-ManagerHomePage</title>
+</head>
+
+<body class="idmain">
+    <main id="app">
+        <div class="top-div">
+            <div class="base-icon">Welcome! {{username}}</div>
+            <i class="fas fa-heart" style="color:green"></i><button class="features" onclick="window.open('courseoverview.html')">Courses</button>
+            <!--这里连到有course的界面，比如homepage-->
+            <i class="fas fa-heart" style="color:yellow"></i><a href="manage_user_info.html"><button class="features">Manage User Information</button></a>
+            <!--waiting for database operation-->
+            <!-- <i class="fas fa-heart" style="color:blue"></i><button class="features" onclick="window.open('ManagerHomePage.html')">Events</button> -->
+        </div>
+        <div class="left-feature-set">
+            <i class="fa-regular fa-heart" style="color:red"></i><a href="managersetting.html"><button class="features">{{username}}</button></a>
+            <!--waiting for database operation-->
+            <i class="fas fa-heart" style="color:yellow"></i><a href="manage_user.html"><button class="features">Manage User</button></a>
+            <!--waiting for database operation-->
+            <i class="fas fa-heart" style="color:green"></i><a href="manage_major_course.html"><button class="features">Manage Courses</button></a>
+            <!--这里连到有course的界面，比如homepage-->
+            <i class="fas fa-heart" style="color:blue"></i><a href="ManagerHomePage.html"><button class="features">Manage Events </button></a>
+            <!-- <i class="fas fa-heart" style="color:black"></i><a href="calendar.html"><button class="features">Calender</button></a> -->
+            <div class="checkp">
+                <button v-if="username !== ''" v-on:click="logout()">logout</button>
+                <button v-if="username == ''" v-on:click="login()">login</button>
+            </div>
+        </div>
+        </div>
+
+        <div class="main-part">
+            <div class="post-page">
+                <div class="post" v-if="user_id !== ''">
+                    <p class="login-p">Your Email:</p>
+                    <p class="result">{{email}}</p>
+                    <p class="login-p">Your ID:</p>
+                    <p class="result">{{user_id}}</p>
+                    <div class="change-password">
+                        <p class="login-p">Change password</p>
+                        <input class="login-box-input" type="password" name="password" placeholder="Enter new password" v-model="change_pass">
+                        <div>
+                            <p class="login-p ">Verification code</p>
+                            <input class="login-box-input" type="text" name="email" placeholder="Enter Verification code" v-model="code">
+                            <button class="login-button-s" v-on:click="getcode()">get code</button><br />
+                            <p v-if="code_send === true" class="response_code">Code send!</p>
+                            <p class="result">Note: You might need to login again after you change the password.</p>
+                            <div>
+                                <button class="submit" v-on:click="submit()">submit</button><br />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="change-password">
+                        <p class="login-p">Email Notification</p>
+                        <div class="box">
+                            <input type="checkbox" class="check" v-model="responed" />
+                            <p class="checkp">I accept to receice emails when another user attend my event.</p>
+                        </div>
+                        <div class="box">
+                            <input type="checkbox" class="check" v-model="comfirm" />
+                            <p class="checkp">I accept to receice emails when event is comfirmed.</p>
+                        </div>
+                        <div class="box">
+                            <input type="checkbox" class="check" v-model="event_finish" />
+                            <p class="checkp">I accept to receice emails when event is finished.</p>
+                        </div>
+                        <div class="box">
+                            <input type="checkbox" class="check" v-model="event_cancel" />
+                            <p class="checkp">I accept to receice emails when event is canceled.</p>
+                        </div>
+                        <div>
+                            <button class="submit" v-on:click="submit2()">submit</button><br />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right-set">
+            <div class="ad" ref="ads">
+                ad gonna be here
+                <img src="stylesheets/ashwini-chaudhary-monty-MxxqkMLJmL4-unsplash.jpg" alt="ad" width="300" height="400"> some ad description.
+                <!-- Not adding yet -->
+                <a href="">and a link</a>
+                <button v-on:click="closead()">Close</button>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

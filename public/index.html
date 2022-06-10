@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="stylesheets/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="javascripts/index.js" defer></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> AoLiGei </title>
+</head>
+
+<!-- The Homepage for the whole website -->
+
+<body>
+    <!-- Menu nevigation -->
+    <header>
+        <ul class="menu_list">
+            <li class="menu_item"> <a href="index.html"> Home </a> </li>
+
+            <li class="menu_item" id="course_item"><a href="courseoverview.html"> Course Overview </a>
+                <div class="dropdown_item">
+                    <span class="dropdown_detail"> <a href="courseoverview.html"> Bachelor of Computer Science </a></span>
+                    <span class="dropdown_detail"> <a href="courseoverview.html"> Bachelor of Engineering (Honours)(Civil) </a></span>
+                    <span class="dropdown_detail"> <a href="courseoverview.html"> Bachelor of Mathematical Sciences </a></span>
+                    <span class="dropdown_detail"> <a href="courseoverview.html"> Bachelor of Architectural Design </a></span>
+                    <span class="dropdown_detail"> <a href="courseoverview.html"> Bachelor of Applied Data Analytics </a></span>
+                </div>
+            </li>
+
+            <li class="menu_item" id="login_item"> Login
+                <div class="dropdown_item">
+                    <span class="dropdown_detail"> <a href="login.html" > Student </a></span>
+                    <span class="dropdown_detail"> <a href="ManagerLogin.html">Staff </a></span>
+                </div>
+            </li>
+            <!-- <li class="menu_item"> Search </li> -->
+        </ul>
+
+        <div class="search_section">
+            <input type="text" class="search_bar" id="search_content">
+            <a href="#" class="search">
+                <img src="images/question_mark.jpeg" style="width: 30px;" onclick="search()">
+            </a>
+        </div>
+
+
+    </header>
+
+    <!-- Background -->
+    <div class="background">
+        <video autoplay loop muted>
+            <source src="stylesheets/mountain.mp4">
+
+        </video>
+
+        <div class="heading">
+            <h1> Welcome to </h1>
+        </div>
+        <div class="text">
+            <h1>AoLiGei</h1>
+        </div>
+    </div>
+
+    <!-- Introduction cards -->
+    <div class="Intro_cards">
+        <div id="intro_card" class="shell">
+
+            <div class="box">
+                <div class="image_card">
+                    <img src="images/color5.jpeg" alt="">
+                </div>
+                <div class="content">
+                    <h1> Introduction </h1>
+                    <p> This is a social website which based on the school</p>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="image_card">
+                    <img src="images/color4.jpeg" alt="">
+                </div>
+                <div class="content">
+                    <h1> Study Well </h1>
+                    <p> You can choose the course and see the related course information </p>
+                </div>
+            </div>
+
+
+            <div class="box">
+                <div class="image_card">
+                    <img src="images/color3.jpeg" alt="">
+                </div>
+                <div class="content">
+                    <h1> Join Event </h1>
+                    <p> You can choose to join many different events to enrich your <b>Uni</b> life </p>
+                </div>
+            </div>
+
+
+            <div class="box">
+                <div class="image_card">
+                    <img src="images/color2.jpeg" alt="">
+                </div>
+                <div class="content">
+                    <h1> Make Friends </h1>
+                    <p> You can make the friends in our website, and join the events together </p>
+                </div>
+            </div>
+
+
+            <div class="box">
+                <div class="image_card">
+                    <img src="images/color1.jpeg" alt="">
+                </div>
+                <div class="content">
+                    <h1> Explore AoLiGei </h1>
+                    <p> Hope you can join us and have a fanstastic experience </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Introduction course cards -->
+    <div class="Intro_cards">
+        <div id="intro_course_card" class="shell">
+
+            <div class="box">
+                <div class="image_card">
+                    <img src="images/color1.jpeg" alt="">
+                </div>
+                <div class="content">
+                    <h2> Bechelor of Computer Science </h2>
+                    <ul>
+                        <li v-for="item in CS"> {{ item.title }}</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="image_card">
+                    <img src="images/color2.jpeg" alt="">
+                </div>
+                <div class="content">
+                    <h2> Bechelor of Engineering (Honours)(Civil)</h2>
+                    <ul>
+                        <li v-for="item in CIVIL">{{ item.title }}</li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="box">
+                <div class="image_card">
+                    <img src="images/color3.jpeg" alt="">
+                </div>
+                <div class="content">
+                    <h2> Bachelor of Mathematical Sciences </h2>
+                    <ul>
+                        <li v-for="item in MATHS">{{ item.title }}</li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="box">
+                <div class="image_card">
+                    <img src="images/color4.jpeg" alt="">
+                </div>
+                <div class="content">
+                    <h2> Bachelor of Architectural Design </h2>
+                    <ul>
+                        <li v-for="item in AD">{{ item.title }}</li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="box">
+                <div class="image_card">
+                    <img src="images/color5.jpeg" alt="">
+                </div>
+                <div class="content">
+                    <h2> Bachelor of Applied Data Analytics </h2>
+                    <ul>
+                        <li v-for="item in ADA">{{ item.title }}</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

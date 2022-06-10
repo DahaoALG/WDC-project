@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="stylesheets/style.css">
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+        <script src="javascripts/notlogout.js" defer></script>
+        <title>Aoligei-Login</title>
+    </head>
+    <body class="body1" >
+        <div class="login-box" id="app">
+            <h4 class="login-head">oops!</h4>
+            <p class="login-p">It seems like you have already log in an account with account name:  {{username}} .</p>
+            <p class="login-p">Would you wish to log in as {{username}}?</p>
+            <button class="login-buttom-a" v-on:click="loginas()">Login as {{username}}</button><br />
+            <button class="login-buttom-a" v-on:click="login()">Login with other account</button><br />
+            <button class="login-buttom-b" v-on:click="signup()">Sign Up</button><br />
+            <button class="login-buttom-a" v-on:click="loginvisitor()">Access as visitor</button><br />
+        </div>
+    </body>
+</html>

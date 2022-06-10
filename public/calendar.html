@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <script src="https://kit.fontawesome.com/3a85694e3a.js" crossorigin="anonymous"></script>
+    <script src="javascripts/calendar.js" defer></script>
+    <title>Aoligei-idmain</title>
+</head>
+
+<body class="idmain">
+    <main id="app">
+        <div class="top-div">
+            <div class="base-icon">Welcome! {{username}}</div>
+            <i class="fas fa-heart" style="color:green"></i><button class="features" onclick="window.open('courseoverview.html')">Courses</button>
+            <i class="fas fa-heart" style="color:yellow"></i><a href="idevent.html"><button class="features">Your Event</button></a>
+            <i class="fas fa-heart" style="color:blue"></i><a href="idmain.html"><button class="features">Events</button></a>
+        </div>
+        <div class="left-feature-set">
+            <i class="fa-regular fa-heart" style="color:red"></i><a href="usersetting.html"><button class="features" >{{username}}</button></a>
+            <i class="fas fa-heart" style="color:yellow"></i><a href="idevent.html"><button class="features">Your Event</button></a>
+            <i class="fas fa-heart" style="color:green"></i><a href="major_course.html"><button class="features">Courses</button></a>
+            <i class="fas fa-heart" style="color:blue"></i><a href="idmain.html"><button class="features">Events</button></a>
+            <i class="fas fa-heart" style="color:black"></i><a href="calendar.html"><button class="features">Calender</button></a>
+            <div class="checkp">
+                <button v-if="username !== ''" v-on:click="logout()">logout</button>
+                <button v-if="username == ''" v-on:click="login()">login</button>
+            </div>
+        </div>
+        <div class="main-part">
+            <div class="post-page">
+                <div class="calendar-post">
+
+                    <body class="calendar-body">
+
+                        <div id="container">
+                            <div id="header">
+                                <div id="monthDisplay"></div>
+                                <div>
+                                    <button class="calendar-button" id="backButton" v-on:click="getback()">Back</button>
+                                    <button class="calendar-button" id="nextButton" v-on:click="getnext()">Next</button>
+                                </div>
+                            </div>
+
+                            <div id="weekdays">
+                                <div>Sunday</div>
+                                <div>Monday</div>
+                                <div>Tuesday</div>
+                                <div>Wednesday</div>
+                                <div>Thursday</div>
+                                <div>Friday</div>
+                                <div>Saturday</div>
+                            </div>
+
+                            <div id="calendar"></div>
+                        </div>
+
+                        <div id="newEventModal">
+                            <h2>New Event</h2>
+                            <p>Post Your Event Here!</p>
+                                <input v-model="event.event_name" type="text" name="title" placeholder="Enter Title" >
+                                <input v-model="event.event_place" type="text" name="title" placeholder="Enter place" ><br />
+                                <textarea v-model="event.event_description"class="text2" placeholder="Text here!" >text here!</textarea>
+                                <div>
+                                    <button class="calendar-button" style="background-color: blue" type="submit" v-on:click="postca()">Submit</button>
+                                    <button class="calendar-button" id="cancelButton">Cancel</button>
+                                </div>
+
+                           <!--<input id="eventTitleInput" class="eventTitleInput" placeholder="Event Title" />
+                            <input id="eventDesInput"class="eventTitleInput" placeholder="Event Description" />
+                            <button class="calendar-button" id="saveButton">Save</button>
+                            <button class="calendar-button" id="cancelButton">Cancel</button>-->
+                        </div>
+
+                        <div id="deleteEventModal">
+                            <h2>Event</h2>
+
+                            <h4 id="eventText" style="font-size: 20px"></h4>
+                            <i id="eventTime" style="color:grey; font-size: 8px"></i>
+                            <p id="eventDes" style="font-size: 10px"></p>
+
+                            <button class="calendar-button" id="closeButton">Close</button>
+                        </div>
+
+                        <div id="modalBackDrop"></div>
+                    </body>
+                </div>
+            </div>
+        </div>
+        <div class="right-set" ref="ads">
+            <div class="ad">
+                ad gonna be here
+                <img src="stylesheets/ashwini-chaudhary-monty-MxxqkMLJmL4-unsplash.jpg" alt="ad" width="300" height="400"> some ad description.
+                <!-- Not adding AD yet -->
+                <a href="">and a link</a>
+                <button v-on:click="closead()">Close</button>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

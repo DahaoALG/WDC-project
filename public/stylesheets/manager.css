@@ -1,0 +1,257 @@
+.body1 {
+    background-image: url("dynamic-wang-Oyycm5TAJBI-unsplash.jpg");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.98;
+}
+
+a {
+    color: #00B7FF;
+}
+
+.login-head {
+    font-family: Ink Free;
+    font-size: 30px;
+    text-align: center;
+}
+
+.login-box {
+    width: 500px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 2px solid white;
+    padding: 30px 50px;
+}
+
+.login-box h4 {
+    font-weight: bold;
+    margin: 20px 0px;
+}
+
+.login-p {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.login-box input {
+    border: none;
+    border-bottom: 1px solid black;
+    height: 30px;
+    width: 300px;
+    outline: none;
+}
+
+.login-box input:focus {
+    border-color: blue;
+}
+
+.login-buttom-a {
+    margin-top: 10px;
+    border: none;
+    outline: none;
+    height: 30px;
+    width: 200px;
+    background: blue;
+    border-radius: 5px;
+    color: white;
+}
+
+.login-buttom-a:hover {
+    background: lightblue;
+}
+
+.login-buttom-b {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: none;
+    outline: none;
+    height: 30px;
+    width: 200px;
+    background: green;
+    border-radius: 5px;
+    color: white;
+}
+
+.login-buttom-b:hover {
+    background: lightgreen;
+}
+
+.reminder {
+    font-size: 8px;
+    color: red;
+}
+
+.p1 {
+    font-size: 3px;
+    color: grey;
+}
+
+
+/*-----------------------------------------*/
+
+.left-feature-set {
+    width: 300px;
+    border: none;
+    border-right: 1px solid lightgrey;
+    float: left;
+}
+
+.top-div {
+    height: 50px;
+    font-weight: bold;
+    background-color: lightgray;
+    border-bottom: 1px solid black;
+    display: block;
+}
+
+.features {
+    font-size: 20px;
+    border: none;
+    border-bottom: 1px solid lightgrey;
+    outline: none;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    width: 300px;
+    text-align: left;
+    background-color: lightslategray;
+    color: white;
+    border-radius: 20px;
+    position: relative;
+    transition: 0.5s ease-in;
+    z-index: 1;
+}
+
+.features:hover {
+    color: darkblue;
+    cursor: pointer;
+}
+
+.features:before {
+    background-color: lightpink;
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    transition: 0.5s all ease;
+}
+
+.features:hover:before {
+    transition: 0.5s all ease;
+    left: 0%;
+    right: 0%;
+    z-index: -1;
+}
+
+.base-icon {
+    display: inline-block;
+    margin-top: 1px;
+    margin-right: 300px;
+    margin-left: 10px;
+}
+
+.main-part {
+    float: left;
+    width: 900px;
+    background-color: lightgrey;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.post {
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    border: 1px solid white;
+    background-color: white;
+    padding: 30px 50px;
+    width: 700px;
+}
+
+.text1 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 700px;
+    height: 100px;
+}
+
+.post input {
+    height: 15px;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+}
+
+.right-set {
+    float: left;
+    width: 400px;
+    border-radius: 10px;
+    border: 1px solid black;
+    background-color: lightgrey;
+    padding: 30px;
+}
+
+.ad {
+    border-radius: 10px;
+    background-color: white;
+    border: 1px solid black;
+    padding: 30px;
+}
+
+.ad img {
+    margin: 10px;
+}
+
+.post-title {
+    font-size: 25px;
+    display: inline;
+}
+
+.post-event-time {
+    font-size: 5px;
+    display: inline;
+    margin-left: 200px;
+}
+
+.post-text {
+    font-size: 12px;
+    table-layout: fixed;
+    word-break: break-all;
+}
+
+.post-time {
+    font-size: 5px;
+    color: grey;
+}
+
+.deletePost {
+    display: block;
+}
+
+.fa-heart {
+    animation-name: heartbeat;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
